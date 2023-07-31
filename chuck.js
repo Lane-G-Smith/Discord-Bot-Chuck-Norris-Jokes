@@ -38,11 +38,11 @@ client.on("messageCreate", async function (message) {
       if (message.author.bot) return;
 
 // "awesome" triggers chuck norris joke API
-else (message.content.toLowerCase().includes("awesome")) {
+else if (message.content.toLowerCase().includes("chuck")) {
     let response = await fetch("https://api.chucknorris.io/jokes/random/");
     let data = await response.json();
-    message.reply(`You think you know what awesome is? ${data.value}`)
-  }
+    message.reply(`${data.value}`)
+    }
 });
 
 // bot login using token from .env file
